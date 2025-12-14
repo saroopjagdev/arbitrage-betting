@@ -18,7 +18,7 @@ def get_bet_info(team1, team2, odds1, odds2, bookie1, bookie2):
         f"Arbitrage found!\n"
         f"→ Bet {stake1:.2f} units on {team1} at {bookie1} (odds {odds1})\n"
         f"→ Bet {stake2:.2f} units on {team2} at {bookie2} (odds {odds2})\n"
-        f"Guaranteed profit: {profit*100:.2f}% per total stake\n"
+        f"Profit: {profit*100:.2f}% per total stake\n"
     )
 
 def find_arb_three_way(odds_home, odds_draw, odds_away):

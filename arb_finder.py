@@ -1,7 +1,8 @@
 import requests
 from dotenv import load_dotenv
 import os
-from arb_calculation import find_arb, get_bet_info, find_arb_three_way, get_arb_details_three_way
+from arb_calculation import *
+from discord_alerts import send_alert
 load_dotenv()
 
 API_KEY = os.getenv("api_key")
@@ -76,7 +77,7 @@ def get_odds_data(sport):
     url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
     params = {
         "apiKey": API_KEY,
-        "regions": "uk,eu",
+        "regions": "uk",
         "markets": "h2h",
         "oddsFormat": "decimal",
     }
@@ -149,17 +150,16 @@ def find_two_way_arbs(data):
 
         if best_home["odds"] and best_away["odds"]:
             if find_arb(best_home["odds"], best_away["odds"]):
-                print(
-                    get_bet_info(
-                        home,
-                        away,
-                        best_home["odds"],
-                        best_away["odds"],
-                        best_home["bookie"],
-                        best_away["bookie"]
-                    )
+                message = get_bet_info(
+                    home,
+                    away,
+                    best_home["odds"],
+                    best_away["odds"],
+                    best_home["bookie"],
+                    best_away["bookie"]
                 )
-                print("-" * 60)
+
+                send_alert(message)
 
             
 def run_arbitrage_tracker(sport):
@@ -181,5 +181,5 @@ def run_arbitrage_tracker(sport):
 
 
 if __name__ == "__main__":
-    run_arbitrage_tracker("soccer_epl")
+    run_arbitrage_tracker("basketball_nba")
 
