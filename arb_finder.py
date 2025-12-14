@@ -84,7 +84,6 @@ def get_odds_data(sport):
     }
     response = requests.get(url, params=params)
     data = response.json()
-    print(data)
     return data
 
 def find_three_way_arbs(data):
