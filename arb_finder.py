@@ -1,13 +1,12 @@
 import requests
-from dotenv import load_dotenv
 import os
 from arb_calculation import *
 from discord_alerts import send_alert
-load_dotenv()
 
-API_KEY = os.getenv("api_key")
 
-seen_arbs = set()
+API_KEY = os.getenv("API_KEY")
+
+
 
 
 SPORT_TYPES = {
@@ -161,11 +160,9 @@ def find_two_way_arbs(data):
                     best_away["bookie"]
                 )
 
-                arb_key = f"{home}-{away}-{best_home['bookie']}-{best_away['bookie']}"
 
-                if arb_key not in seen_arbs:
-                    send_alert(message)
-                    seen_arbs.add(arb_key)
+                send_alert(message)
+
 
 
             

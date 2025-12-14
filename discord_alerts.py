@@ -1,10 +1,10 @@
 import requests
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
-webhoook = os.getenv("webhook")
+
+
+webhoook = os.getenv("WEBHOOK")
 
 def send_alert (msg):
     data = {
