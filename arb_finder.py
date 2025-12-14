@@ -7,6 +7,8 @@ load_dotenv()
 
 API_KEY = os.getenv("api_key")
 
+seen_arbs = set()
+
 
 SPORT_TYPES = {
     # ⚽ Soccer (3-way: win/draw/lose)
@@ -159,7 +161,12 @@ def find_two_way_arbs(data):
                     best_away["bookie"]
                 )
 
-                send_alert(message)
+                arb_key = f"{home}-{away}-{best_home['bookie']}-{best_away['bookie']}"
+
+                if arb_key not in seen_arbs:
+                    send_alert(message)
+                    seen_arbs.add(arb_key)
+
 
             
 def run_arbitrage_tracker(sport):
