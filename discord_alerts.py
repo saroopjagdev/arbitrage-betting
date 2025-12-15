@@ -12,4 +12,3 @@ def send_alert (msg):
     }
     requests.post(webhoook, json=data)
 
-send_alert("Arbitrage Bot Started!")
