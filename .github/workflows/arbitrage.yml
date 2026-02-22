@@ -2,7 +2,7 @@ name: Arbitrage Bot
 
 on:
   schedule:
-    - cron: "0 * * * *"   # runs every hour
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 jobs:
