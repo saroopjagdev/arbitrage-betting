@@ -6,7 +6,11 @@ from discord_alerts import send_alert
 
 API_KEY = os.getenv("API_KEY")
 
+# Minimum profit threshold (1% = 0.01)
+MIN_PROFIT = 0.01
 
+# Minimum meaningful stake proportion (0.5% of bankroll)
+MIN_STAKE_PROP = 0.005
 
 
 SPORT_TYPES = {
@@ -58,7 +62,7 @@ SPORT_TYPES = {
     "mma_mixed_martial_arts": "2way",
     "boxing_boxing": "2way",
 
-    # 🏒 Hockey (3-way, due to OT possibility)
+    # 🏒 Hockey (3-way)
     "icehockey_nhl": "3way",
     "icehockey_sweden_hockey_league": "3way",
     "icehockey_sweden_allsvenskan": "3way",
@@ -74,6 +78,7 @@ SPORT_TYPES = {
     "cricket_big_bash": "2way",
 }
 
+
 def get_odds_data(sport):
     url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
     params = {
@@ -85,6 +90,7 @@ def get_odds_data(sport):
     response = requests.get(url, params=params)
     data = response.json()
     return data
+
 
 def find_three_way_arbs(data):
     for match in data:
@@ -110,24 +116,42 @@ def find_three_way_arbs(data):
                 best_draw = {"bookie": bm["title"], "odds": odds_map["Draw"]}
 
         if all([best_home["odds"], best_draw["odds"], best_away["odds"]]):
+            total_inverse = (
+                (1 / best_home["odds"]) +
+                (1 / best_draw["odds"]) +
+                (1 / best_away["odds"])
+            )
+            profit = (1 / total_inverse) - 1
+
+            # Calculate stake proportions
+            stake_home = (1 / best_home["odds"]) / total_inverse
+            stake_draw = (1 / best_draw["odds"]) / total_inverse
+            stake_away = (1 / best_away["odds"]) / total_inverse
+
             if find_arb_three_way(
                 best_home["odds"], best_draw["odds"], best_away["odds"]
             ):
-                print(
-                    get_arb_details_three_way(
-                        home,
-                        away,
-                        best_home["odds"],
-                        best_draw["odds"],
-                        best_away["odds"],
-                        best_home["bookie"],
-                        best_draw["bookie"],
-                        best_away["bookie"],
+                if (
+                    profit > MIN_PROFIT and
+                    stake_home >= MIN_STAKE_PROP and
+                    stake_draw >= MIN_STAKE_PROP and
+                    stake_away >= MIN_STAKE_PROP
+                ):
+                    print(
+                        get_arb_details_three_way(
+                            home,
+                            away,
+                            best_home["odds"],
+                            best_draw["odds"],
+                            best_away["odds"],
+                            best_home["bookie"],
+                            best_draw["bookie"],
+                            best_away["bookie"],
+                        )
                     )
-                )
-                print("-" * 60)
-            
-        
+                    print("-" * 60)
+
+
 def find_two_way_arbs(data):
     for match in data:
         home = match["home_team"]
@@ -150,21 +174,31 @@ def find_two_way_arbs(data):
 
         if best_home["odds"] and best_away["odds"]:
             if find_arb(best_home["odds"], best_away["odds"]):
-                message = get_bet_info(
-                    home,
-                    away,
-                    best_home["odds"],
-                    best_away["odds"],
-                    best_home["bookie"],
-                    best_away["bookie"]
+                total_inverse = (
+                    (1 / best_home["odds"]) +
+                    (1 / best_away["odds"])
                 )
+                profit = (1 / total_inverse) - 1
+
+                stake_home = (1 / best_home["odds"]) / total_inverse
+                stake_away = (1 / best_away["odds"]) / total_inverse
+
+                if (
+                    profit > MIN_PROFIT and
+                    stake_home >= MIN_STAKE_PROP and
+                    stake_away >= MIN_STAKE_PROP
+                ):
+                    message = get_bet_info(
+                        home,
+                        away,
+                        best_home["odds"],
+                        best_away["odds"],
+                        best_home["bookie"],
+                        best_away["bookie"]
+                    )
+                    send_alert(message)
 
 
-                send_alert(message)
-
-
-
-            
 def run_arbitrage_tracker(sport):
     if sport not in SPORT_TYPES:
         print(f"Unsupported sport: {sport}")
@@ -177,6 +211,7 @@ def run_arbitrage_tracker(sport):
 
     print(f"\nChecking arbitrage for {sport}...\n")
     sport_type = SPORT_TYPES[sport]
+
     if sport_type == "3way":
         find_three_way_arbs(data)
     else:
@@ -185,4 +220,3 @@ def run_arbitrage_tracker(sport):
 
 if __name__ == "__main__":
     run_arbitrage_tracker("basketball_nba")
-
