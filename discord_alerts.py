@@ -4,11 +4,11 @@ import os
 
 
 
-webhoook = os.getenv("WEBHOOK")
+webhook = os.getenv("WEBHOOK")
 
 def send_alert (msg):
     data = {
         "content": msg
     }
-    requests.post(webhoook, json=data)
+    requests.post(webhook, json=data)
 

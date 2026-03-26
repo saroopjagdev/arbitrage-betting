@@ -13,6 +13,13 @@ MIN_PROFIT = 0.01
 MIN_STAKE_PROP = 0.005
 
 
+# Sports to track by default (Optimized for token usage)
+TENNIS_SPORTS = [
+    "tennis_atp", 
+    "tennis_wta"
+]
+
+# Full dictionary for future flexibility
 SPORT_TYPES = {
     # ⚽ Soccer (3-way: win/draw/lose)
     "soccer_epl": "3way",
@@ -31,16 +38,9 @@ SPORT_TYPES = {
     "soccer_uefa_europa_conference_league": "3way",
     "soccer_uefa_european_championship": "3way",
 
-    # 🎾 Tennis (2-way: win/lose)
-    "tennis_atp_wimbledon": "2way",
-    "tennis_atp_us_open": "2way",
-    "tennis_atp_french_open": "2way",
-    "tennis_atp_australian_open": "2way",
-    "tennis_atp_miami_open": "2way",
-    "tennis_wta_wimbledon": "2way",
-    "tennis_wta_us_open": "2way",
-    "tennis_wta_french_open": "2way",
-    "tennis_wta_australian_open": "2way",
+    # 🎾 Tennis (2-way)
+    "tennis_atp": "2way",
+    "tennis_wta": "2way",
 
     # 🏀 Basketball (2-way)
     "basketball_nba": "2way",
@@ -86,11 +86,16 @@ def get_odds_data(sport):
         "regions": "uk",
         "markets": "h2h",
         "oddsFormat": "decimal",
+        "includeLinks": "true",
     }
-    response = requests.get(url, params=params)
-    data = response.json()
-    print(data)
-    return data
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        data = response.json()
+        return data
+    except Exception as e:
+        print(f"Error fetching data for {sport}: {e}")
+        return []
 
 
 def find_three_way_arbs(data):
@@ -98,9 +103,9 @@ def find_three_way_arbs(data):
         home = match["home_team"]
         away = match["away_team"]
 
-        best_home = {"bookie": None, "odds": 0}
-        best_draw = {"bookie": None, "odds": 0}
-        best_away = {"bookie": None, "odds": 0}
+        best_home = {"bookie": None, "odds": 0, "link": ""}
+        best_draw = {"bookie": None, "odds": 0, "link": ""}
+        best_away = {"bookie": None, "odds": 0, "link": ""}
 
         for bm in match["bookmakers"]:
             if not bm["markets"]:
@@ -108,13 +113,14 @@ def find_three_way_arbs(data):
 
             outcomes = bm["markets"][0]["outcomes"]
             odds_map = {o["name"]: o["price"] for o in outcomes}
+            link = bm.get("link", "")
 
             if home in odds_map and odds_map[home] > best_home["odds"]:
-                best_home = {"bookie": bm["title"], "odds": odds_map[home]}
+                best_home = {"bookie": bm["title"], "odds": odds_map[home], "link": link}
             if away in odds_map and odds_map[away] > best_away["odds"]:
-                best_away = {"bookie": bm["title"], "odds": odds_map[away]}
+                best_away = {"bookie": bm["title"], "odds": odds_map[away], "link": link}
             if "Draw" in odds_map and odds_map["Draw"] > best_draw["odds"]:
-                best_draw = {"bookie": bm["title"], "odds": odds_map["Draw"]}
+                best_draw = {"bookie": bm["title"], "odds": odds_map["Draw"], "link": link}
 
         if all([best_home["odds"], best_draw["odds"], best_away["odds"]]):
             total_inverse = (
@@ -138,18 +144,21 @@ def find_three_way_arbs(data):
                     stake_draw >= MIN_STAKE_PROP and
                     stake_away >= MIN_STAKE_PROP
                 ):
-                    print(
-                        get_arb_details_three_way(
-                            home,
-                            away,
-                            best_home["odds"],
-                            best_draw["odds"],
-                            best_away["odds"],
-                            best_home["bookie"],
-                            best_draw["bookie"],
-                            best_away["bookie"],
-                        )
+                    message = get_arb_details_three_way(
+                        home,
+                        away,
+                        best_home["odds"],
+                        best_draw["odds"],
+                        best_away["odds"],
+                        best_home["bookie"],
+                        best_draw["bookie"],
+                        best_away["bookie"],
+                        best_home["link"],
+                        best_draw["link"],
+                        best_away["link"],
                     )
+                    send_alert(message)
+                    print(message)
                     print("-" * 60)
 
 
@@ -158,8 +167,8 @@ def find_two_way_arbs(data):
         home = match["home_team"]
         away = match["away_team"]
 
-        best_home = {"bookie": None, "odds": 0}
-        best_away = {"bookie": None, "odds": 0}
+        best_home = {"bookie": None, "odds": 0, "link": ""}
+        best_away = {"bookie": None, "odds": 0, "link": ""}
 
         for bm in match["bookmakers"]:
             if not bm["markets"]:
@@ -167,11 +176,12 @@ def find_two_way_arbs(data):
 
             outcomes = bm["markets"][0]["outcomes"]
             odds_map = {o["name"]: o["price"] for o in outcomes}
+            link = bm.get("link", "")
 
             if home in odds_map and odds_map[home] > best_home["odds"]:
-                best_home = {"bookie": bm["title"], "odds": odds_map[home]}
+                best_home = {"bookie": bm["title"], "odds": odds_map[home], "link": link}
             if away in odds_map and odds_map[away] > best_away["odds"]:
-                best_away = {"bookie": bm["title"], "odds": odds_map[away]}
+                best_away = {"bookie": bm["title"], "odds": odds_map[away], "link": link}
 
         if best_home["odds"] and best_away["odds"]:
             if find_arb(best_home["odds"], best_away["odds"]):
@@ -195,29 +205,30 @@ def find_two_way_arbs(data):
                         best_home["odds"],
                         best_away["odds"],
                         best_home["bookie"],
-                        best_away["bookie"]
+                        best_away["bookie"],
+                        best_home["link"],
+                        best_away["link"]
                     )
                     send_alert(message)
+                    print(message)
+                    print("-" * 60)
 
 
-def run_arbitrage_tracker(sport):
-    if sport not in SPORT_TYPES:
-        print(f"Unsupported sport: {sport}")
-        return
+def run_arbitrage_tracker(sports_list):
+    for sport in sports_list:
+        print(f"\nChecking arbitrage for {sport}...\n")
+        data = get_odds_data(sport)
+        if not data:
+            continue
 
-    data = get_odds_data(sport)
-    if not data:
-        print(f"No data available for {sport}")
-        return
+        sport_type = SPORT_TYPES.get(sport, "2way")
 
-    print(f"\nChecking arbitrage for {sport}...\n")
-    sport_type = SPORT_TYPES[sport]
-
-    if sport_type == "3way":
-        find_three_way_arbs(data)
-    else:
-        find_two_way_arbs(data)
+        if sport_type == "3way":
+            find_three_way_arbs(data)
+        else:
+            find_two_way_arbs(data)
 
 
 if __name__ == "__main__":
-    run_arbitrage_tracker("basketball_nba")
+    # Runs tennis by default, but SPORT_TYPES is ready for any sport change
+    run_arbitrage_tracker(TENNIS_SPORTS)
