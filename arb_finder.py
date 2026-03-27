@@ -102,6 +102,7 @@ def find_three_way_arbs(data):
     for match in data:
         home = match["home_team"]
         away = match["away_team"]
+        commence_time = match.get("commence_time", "")
 
         best_home = {"bookie": None, "odds": 0, "link": ""}
         best_draw = {"bookie": None, "odds": 0, "link": ""}
@@ -144,7 +145,7 @@ def find_three_way_arbs(data):
                     stake_draw >= MIN_STAKE_PROP and
                     stake_away >= MIN_STAKE_PROP
                 ):
-                    message = get_arb_details_three_way(
+                    message, embed = get_arb_details_three_way(
                         home,
                         away,
                         best_home["odds"],
@@ -156,8 +157,9 @@ def find_three_way_arbs(data):
                         best_home["link"],
                         best_draw["link"],
                         best_away["link"],
+                        commence_time=commence_time
                     )
-                    send_alert(message)
+                    send_alert(message, embed=embed)
                     print(message)
                     print("-" * 60)
 
@@ -166,6 +168,7 @@ def find_two_way_arbs(data):
     for match in data:
         home = match["home_team"]
         away = match["away_team"]
+        commence_time = match.get("commence_time", "")
 
         best_home = {"bookie": None, "odds": 0, "link": ""}
         best_away = {"bookie": None, "odds": 0, "link": ""}
@@ -199,7 +202,7 @@ def find_two_way_arbs(data):
                     stake_home >= MIN_STAKE_PROP and
                     stake_away >= MIN_STAKE_PROP
                 ):
-                    message = get_bet_info(
+                    message, embed = get_bet_info(
                         home,
                         away,
                         best_home["odds"],
@@ -207,9 +210,10 @@ def find_two_way_arbs(data):
                         best_home["bookie"],
                         best_away["bookie"],
                         best_home["link"],
-                        best_away["link"]
+                        best_away["link"],
+                        commence_time=commence_time
                     )
-                    send_alert(message)
+                    send_alert(message, embed=embed)
                     print(message)
                     print("-" * 60)
 
@@ -230,5 +234,4 @@ def run_arbitrage_tracker(sports_list):
 
 
 if __name__ == "__main__":
-    # Runs tennis by default, but SPORT_TYPES is ready for any sport change
     run_arbitrage_tracker(TENNIS_SPORTS)
