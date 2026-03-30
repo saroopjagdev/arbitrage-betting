@@ -1,3 +1,23 @@
+SPORT_EMOJIS = {
+    "soccer": "⚽",
+    "tennis": "🎾",
+    "basketball": "🏀",
+    "baseball": "⚾",
+    "americanfootball": "🏈",
+    "mma": "🥊",
+    "boxing": "🥊",
+    "icehockey": "🏒",
+    "rugby": "🏉",
+    "cricket": "🏏"
+}
+
+def get_emoji(sport_key):
+    for key, emoji in SPORT_EMOJIS.items():
+        if key in sport_key.lower():
+            return emoji
+    return "📈"  # Default generic emoji
+
+
 def find_arb(odds1, odds2):
     # Only allow positive decimal odds
     if odds1 <= 1 or odds2 <= 1:
@@ -5,7 +25,7 @@ def find_arb(odds1, odds2):
     return (1/odds1 + 1/odds2) < 1
 
 
-def get_bet_info(team1, team2, odds1, odds2, bookie1, bookie2, link1="", link2="", commence_time=""):
+def get_bet_info(team1, team2, odds1, odds2, bookie1, bookie2, link1="", link2="", commence_time="", sport_key="tennis"):
     # Theoretical stakes (normalized to 1 unit)
     total_inverse = (1/odds1 + 1/odds2)
     t_stake1 = (1/odds1) / total_inverse
@@ -36,8 +56,10 @@ def get_bet_info(team1, team2, odds1, odds2, bookie1, bookie2, link1="", link2="
     # Green: >2%, Yellow: >0%, Red: <=0%
     color = 0x2ecc71 if actual_profit > 0.02 else (0xf1c40f if actual_profit > 0 else 0xe74c3c)
 
+    emoji = get_emoji(sport_key)
+    
     embed = {
-        "title": f"🎾 Arbitrage: {team1} vs {team2}",
+        "title": f"{emoji} Arbitrage: {team1} vs {team2}",
         "description": f"**{actual_profit*100:.2f}% Guaranteed Profit** (after rounding)\nStarts: {commence_time if commence_time else 'N/A'}",
         "color": color,
         "fields": [
@@ -60,7 +82,7 @@ def find_arb_three_way(odds_home, odds_draw, odds_away):
     return total_inverse < 1
 
 
-def get_arb_details_three_way(home_team, away_team, home_odds, draw_odds, away_odds, bookie_home, bookie_draw, bookie_away, link_home="", link_draw="", link_away="", commence_time=""):
+def get_arb_details_three_way(home_team, away_team, home_odds, draw_odds, away_odds, bookie_home, bookie_draw, bookie_away, link_home="", link_draw="", link_away="", commence_time="", sport_key="soccer"):
     total_inverse = (1 / home_odds) + (1 / draw_odds) + (1 / away_odds)
     t_profit = (1 / total_inverse) - 1
 
@@ -94,8 +116,10 @@ def get_arb_details_three_way(home_team, away_team, home_odds, draw_odds, away_o
 
     color = 0x2ecc71 if actual_profit > 0.02 else (0xf1c40f if actual_profit > 0 else 0xe74c3c)
 
+    emoji = get_emoji(sport_key)
+
     embed = {
-        "title": f"⚽ 3-Way Arbitrage: {home_team} vs {away_team}",
+        "title": f"{emoji} 3-Way Arbitrage: {home_team} vs {away_team}",
         "description": f"**{actual_profit*100:.2f}% Guaranteed Profit** (after rounding)\nStarts: {commence_time if commence_time else 'N/A'}",
         "color": color,
         "fields": [

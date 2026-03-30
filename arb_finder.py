@@ -14,9 +14,8 @@ MIN_STAKE_PROP = 0.005
 
 
 # Sports to track by default (Optimized for token usage)
-TENNIS_SPORTS = [
-    "tennis_atp", 
-    "tennis_wta"
+ACTIVE_SPORTS = [
+    "basketball_nba"
 ]
 
 # Full dictionary for future flexibility
@@ -98,7 +97,7 @@ def get_odds_data(sport):
         return []
 
 
-def find_three_way_arbs(data):
+def find_three_way_arbs(data, sport_key="soccer"):
     for match in data:
         home = match["home_team"]
         away = match["away_team"]
@@ -157,14 +156,15 @@ def find_three_way_arbs(data):
                         best_home["link"],
                         best_draw["link"],
                         best_away["link"],
-                        commence_time=commence_time
+                        commence_time=commence_time,
+                        sport_key=sport_key
                     )
                     send_alert(message, embed=embed)
                     print(message)
                     print("-" * 60)
 
 
-def find_two_way_arbs(data):
+def find_two_way_arbs(data, sport_key="tennis"):
     for match in data:
         home = match["home_team"]
         away = match["away_team"]
@@ -211,7 +211,8 @@ def find_two_way_arbs(data):
                         best_away["bookie"],
                         best_home["link"],
                         best_away["link"],
-                        commence_time=commence_time
+                        commence_time=commence_time,
+                        sport_key=sport_key
                     )
                     send_alert(message, embed=embed)
                     print(message)
@@ -228,10 +229,10 @@ def run_arbitrage_tracker(sports_list):
         sport_type = SPORT_TYPES.get(sport, "2way")
 
         if sport_type == "3way":
-            find_three_way_arbs(data)
+            find_three_way_arbs(data, sport)
         else:
-            find_two_way_arbs(data)
+            find_two_way_arbs(data, sport)
 
 
 if __name__ == "__main__":
-    run_arbitrage_tracker(TENNIS_SPORTS)
+    run_arbitrage_tracker(ACTIVE_SPORTS)
