@@ -6,6 +6,9 @@ on:
     - cron: "30 * * * *"  # delayed free alerts — 30 min after each scan
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run-arbitrage:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && startsWith(github.event.schedule, '0 '))
@@ -43,7 +46,7 @@ jobs:
         run: |
           git config user.name "arb-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pending_free_alerts.json || true
+          git add pending_free_alerts.json
           git diff --cached --quiet || git commit -m "queue free alerts"
           git push
 
@@ -76,6 +79,6 @@ jobs:
         run: |
           git config user.name "arb-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pending_free_alerts.json || true
+          git add pending_free_alerts.json
           git diff --cached --quiet || git commit -m "clear free alerts queue"
           git push
