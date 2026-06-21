@@ -1,10 +1,19 @@
 import requests
 import os
+from datetime import datetime, timezone
 from arb_calculation import *
 from discord_alerts import send_alert
+from scraper import get_odds_data_scraped, SPORT_URLS as SCRAPER_SPORT_URLS
+from marketing import post_arb_to_bluesky, post_daily_digest
 
 
 API_KEY = os.getenv("API_KEY")
+
+# Set USE_SCRAPER=1 in environment to use OddsPortal scraper instead of the API.
+USE_SCRAPER = os.getenv("USE_SCRAPER", "1") == "1"
+
+# Collects arbs found during this run for the daily digest
+_arb_log: list[dict] = []
 
 # Minimum profit threshold (1% = 0.01)
 MIN_PROFIT = 0.01
@@ -13,9 +22,25 @@ MIN_PROFIT = 0.01
 MIN_STAKE_PROP = 0.005
 
 
-# Sports to track by default (Optimized for token usage)
+# Sports to track. Add any key from SPORT_TYPES or SCRAPER_SPORT_URLS.
 ACTIVE_SPORTS = [
-    "basketball_nba"
+    # Tennis — Wimbledon period, then US Open swing (Jun-Sep)
+    "tennis_atp",
+    "tennis_wta",
+    # Soccer — World Cup runs until mid-July; MLS runs all summer
+    "soccer_world_cup",
+    "soccer_usa_mls",
+    # Baseball — MLB full season (Apr-Oct)
+    "baseball_mlb",
+    # Cricket — T20 Blast running now in England (May-Jul)
+    "cricket_t20_blast",
+    # Combat sports — UFC/boxing events every few weeks, year-round
+    "mma_mixed_martial_arts",
+    "boxing_boxing",
+    # Rugby League — NRL season runs Mar-Sep
+    "rugbyleague_nrl",
+    # Basketball — WNBA season runs May-Sep
+    "basketball_wnba",
 ]
 
 # Full dictionary for future flexibility
@@ -79,6 +104,11 @@ SPORT_TYPES = {
 
 
 def get_odds_data(sport):
+    if USE_SCRAPER and sport in SCRAPER_SPORT_URLS:
+        print(f"  [scraper] fetching {sport}")
+        return get_odds_data_scraped(sport)
+
+    # Fallback: The Odds API (requires API_KEY)
     url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
     params = {
         "apiKey": API_KEY,
@@ -159,7 +189,9 @@ def find_three_way_arbs(data, sport_key="soccer"):
                         commence_time=commence_time,
                         sport_key=sport_key
                     )
-                    send_alert(message, embed=embed)
+                    send_alert(message, embed=embed, profit=profit)
+                    post_arb_to_bluesky(home, away, profit, sport_key)
+                    _arb_log.append({"home": home, "away": away, "profit": profit, "sport": sport_key})
                     print(message)
                     print("-" * 60)
 
@@ -214,7 +246,9 @@ def find_two_way_arbs(data, sport_key="tennis"):
                         commence_time=commence_time,
                         sport_key=sport_key
                     )
-                    send_alert(message, embed=embed)
+                    send_alert(message, embed=embed, profit=profit)
+                    post_arb_to_bluesky(home, away, profit, sport_key)
+                    _arb_log.append({"home": home, "away": away, "profit": profit, "sport": sport_key})
                     print(message)
                     print("-" * 60)
 
@@ -236,3 +270,7 @@ def run_arbitrage_tracker(sports_list):
 
 if __name__ == "__main__":
     run_arbitrage_tracker(ACTIVE_SPORTS)
+
+    # Post daily digest once per day (only on the midnight run)
+    if datetime.now(timezone.utc).hour == 0:
+        post_daily_digest(_arb_log)
