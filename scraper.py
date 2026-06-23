@@ -10,7 +10,7 @@ import re
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeout
 
 PARALLEL_PAGES = 8   # concurrent match pages per sport
-MIN_BOOKMAKERS = 8   # skip match pages with fewer bookmakers than this
+MIN_BOOKMAKERS = 5   # skip match pages with fewer bookmakers than this
 MAX_MATCHES = 25     # max match pages to scrape per listing page
 
 # For tennis we discover active tournaments dynamically from the sport root.
@@ -158,7 +158,7 @@ async def get_match_links(page, listing_url: str, tennis_filter: str = "") -> li
             try:
                 await page.goto(full, timeout=20000)
                 await _wait_for_page(page)
-            except PlaywrightTimeout:
+            except Exception:
                 continue
             for href in await _get_hrefs(page):
                 if "/h2h/" in href and not any(s in href for s in skip):
@@ -191,7 +191,7 @@ async def scrape_match(page, match_url: str) -> dict | None:
     try:
         await page.goto(full_url, timeout=20000)
         await _wait_for_page(page)
-    except PlaywrightTimeout:
+    except Exception:
         return None
 
     host_el = await page.query_selector('[data-testid="game-host"]')
@@ -283,7 +283,11 @@ async def scrape_sport(sport_key: str) -> list[dict]:
 
 def get_odds_data_scraped(sport_key: str) -> list[dict]:
     """Synchronous wrapper — drop-in replacement for get_odds_data()."""
-    return asyncio.run(scrape_sport(sport_key))
+    try:
+        return asyncio.run(scrape_sport(sport_key))
+    except Exception as e:
+        print(f"  [scraper error] {sport_key}: {e}")
+        return []
 
 
 if __name__ == "__main__":
