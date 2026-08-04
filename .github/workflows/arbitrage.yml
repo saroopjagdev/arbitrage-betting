@@ -2,8 +2,8 @@ name: Arbitrage Bot
 
 on:
   schedule:
-    - cron: "0 * * * *"   # main scan — top of every hour
-    - cron: "30 * * * *"  # delayed free alerts — 30 min after each scan
+    - cron: "0,15,30,45 * * * *"   # main scan every 15 min
+    - cron: "7,22,37,52 * * * *"   # free alerts 7 min after each scan
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   run-arbitrage:
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && startsWith(github.event.schedule, '0 '))
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && startsWith(github.event.schedule, '0,15'))
     runs-on: ubuntu-latest
 
     steps:
@@ -51,7 +51,7 @@ jobs:
           git push
 
   post-free-alerts:
-    if: github.event_name == 'schedule' && startsWith(github.event.schedule, '30 ')
+    if: github.event_name == 'schedule' && startsWith(github.event.schedule, '7,22')
     runs-on: ubuntu-latest
 
     steps:
