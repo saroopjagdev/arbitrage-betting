@@ -291,6 +291,7 @@ async def scrape_sport(sport_key: str) -> list[dict]:
                 "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             )
         ctx = await browser.new_context(**ctx_kwargs)
+        ctx.set_default_timeout(15000)  # never let a single call hang the run
         await ctx.add_init_script(
             "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
         )

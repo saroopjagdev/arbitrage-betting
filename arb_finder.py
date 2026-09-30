@@ -278,7 +278,8 @@ def run_arbitrage_tracker(sports_list):
 
 
 if __name__ == "__main__":
-    total = run_arbitrage_tracker(ACTIVE_SPORTS)
+    override = [s.strip() for s in os.getenv("ARB_SPORTS", "").split(",") if s.strip()]
+    total = run_arbitrage_tracker(override or ACTIVE_SPORTS)
     print(f"\nTotal matches scraped this run: {total}")
 
     # Post daily digest once per day (only on the midnight run)

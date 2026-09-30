@@ -5,6 +5,11 @@ on:
     - cron: "0,15,30,45 * * * *"   # main scan every 15 min
     - cron: "7,22,37,52 * * * *"   # free alerts 7 min after each scan
   workflow_dispatch:
+    inputs:
+      sports:
+        description: "Comma-separated sport keys (blank = all)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -13,6 +18,7 @@ jobs:
   run-arbitrage:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && startsWith(github.event.schedule, '0,15'))
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repository
@@ -41,8 +47,9 @@ jobs:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
           USE_SCRAPER: "1"
           SCRAPER_HEADED: "1"
+          ARB_SPORTS: ${{ inputs.sports }}
         run: |
-          xvfb-run -a python arb_finder.py
+          xvfb-run -a python -u arb_finder.py
 
       - name: Commit pending free alerts
         run: |
@@ -55,6 +62,7 @@ jobs:
   post-free-alerts:
     if: github.event_name == 'schedule' && startsWith(github.event.schedule, '7,22')
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repository
