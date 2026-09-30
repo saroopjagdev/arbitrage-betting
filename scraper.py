@@ -84,7 +84,8 @@ def fractional_to_decimal(frac_str: str) -> float | None:
 
 
 def parse_bookmaker_row(row_text: str) -> tuple[str, list[float]] | None:
-    parts = [p.strip() for p in row_text.split("\n") if p.strip()]
+    # <tr>.innerText separates cells with tabs (and ad text with newlines)
+    parts = [p.strip() for p in re.split(r"[\n\t]+", row_text) if p.strip()]
     if not parts:
         return None
     bookie_name = parts[0]
@@ -104,13 +105,16 @@ def parse_bookmaker_row(row_text: str) -> tuple[str, list[float]] | None:
     return bookie_name, decimals
 
 
-async def _wait_for_page(page, timeout=8000):
+# OddsPortal dropped its data-testid attributes; the odds table is now a plain
+# <table> with one <tr> per bookmaker: name | 1 | (X) | 2 | payout%.
+ODDS_ROWS = "main table tbody tr"
+TEAMS_FROM_H1 = re.compile(r"^(.+?) vs (.+?) - Odds")
+
+
+async def _wait_for_page(page, selector=f'{ODDS_ROWS}, a[href*="/h2h/"]', timeout=8000):
     """Wait for OddsPortal content to load — faster than a fixed sleep."""
     try:
-        await page.wait_for_selector(
-            '[data-testid="over-under-expanded-row"], [data-testid="matches"]',
-            timeout=timeout,
-        )
+        await page.wait_for_selector(selector, timeout=timeout)
     except PlaywrightTimeout:
         pass
 
@@ -208,24 +212,31 @@ async def scrape_match(page, match_url: str, fail_counts: Counter) -> dict | Non
     )
     try:
         await page.goto(full_url, timeout=20000)
-        await _wait_for_page(page)
+        # match pages: wait for the odds table itself (h2h links are there straight away)
+        await _wait_for_page(page, selector=ODDS_ROWS, timeout=12000)
     except Exception as e:
         await _fail(page, full_url, f"goto-error:{type(e).__name__}", fail_counts)
         return None
 
-    host_el = await page.query_selector('[data-testid="game-host"]')
-    guest_el = await page.query_selector('[data-testid="game-guest"]')
-    if not host_el or not guest_el:
-        await _fail(page, full_url, "no-teams-selector", fail_counts)
+    # Page h1 reads "Home vs Away - Odds, Predictions and H2H Results"
+    h1_el = await page.query_selector("h1")
+    h1 = " ".join((await h1_el.inner_text()).split()) if h1_el else ""
+    teams = TEAMS_FROM_H1.match(h1)
+    if not teams:
+        await _fail(page, full_url, "no-teams-in-h1", fail_counts)
         return None
+    home_team, away_team = teams.group(1).strip(), teams.group(2).strip()
 
-    home_team = (await host_el.inner_text()).strip()
-    away_team = (await guest_el.inner_text()).strip()
+    # Kickoff: first leaf element that looks like HH:MM, with its date label if adjacent
+    commence_time = await page.evaluate(
+        """() => {
+            const el = [...document.querySelectorAll('main *')]
+                .find(e => e.children.length === 0 && /^\\d{1,2}:\\d\\d$/.test(e.textContent.trim()));
+            return el ? (el.parentElement.innerText || el.textContent).replace(/\\s+/g, ' ').trim() : '';
+        }"""
+    )
 
-    time_el = await page.query_selector('[data-testid="game-time-item"]')
-    commence_time = " ".join((await time_el.inner_text()).split()) if time_el else ""
-
-    rows = await page.query_selector_all('[data-testid="over-under-expanded-row"]')
+    rows = await page.query_selector_all(ODDS_ROWS)
     if not rows:
         await _fail(page, full_url, "no-odds-rows", fail_counts)
         return None
