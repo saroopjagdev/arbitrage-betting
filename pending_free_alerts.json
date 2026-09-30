@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "queued_at": "2026-09-30T13:49:57.491267+00:00",
+    "profit": 0.041705716963448936,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Jordan Orozco vs Yusniel Abrahante",
+      "description": "**4.13% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Jordan Orozco",
+          "value": "**0.8903 Units** @ 1.17\nBookie: [Coral](https://sports.coral.co.uk/event/boxing/boxing/upcoming-fights/jordan-orozco-hernandez-v-yusniel-abrahante/46532529/main-markets)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Yusniel Abrahante",
+          "value": "**0.1097 Units** @ 9.5\nBookie: [Virgin Bet](https://www.virginbet.com/sports/boxing/boxing/jordan-orozco-yusniel-abrahante/SBTE_2_1029303529)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-09-30T13:49:59.233344+00:00",
+    "profit": 0.03423423423423433,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.32% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6306 Units** @ 1.64\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3694 Units** @ 2.8\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
