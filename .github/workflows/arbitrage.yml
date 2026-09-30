@@ -40,8 +40,9 @@ jobs:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
           USE_SCRAPER: "1"
+          SCRAPER_HEADED: "1"
         run: |
-          python arb_finder.py
+          xvfb-run -a python arb_finder.py
 
       - name: Commit pending free alerts
         run: |

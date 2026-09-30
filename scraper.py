@@ -6,11 +6,12 @@ works unchanged.
 """
 
 import asyncio
+import os
 import re
 from collections import Counter
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeout
 
-PARALLEL_PAGES = 8   # concurrent match pages per sport
+PARALLEL_PAGES = 4   # concurrent match pages per sport
 MIN_BOOKMAKERS = 5   # skip match pages with fewer bookmakers than this
 MAX_MATCHES = 25     # max match pages to scrape per listing page
 
@@ -274,12 +275,25 @@ async def scrape_sport(sport_key: str) -> list[dict]:
     tennis_filter = TENNIS_FILTERS.get(sport_key, "")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        ua = (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        # GitHub's datacenter IPs get blank pages from OddsPortal. In CI we run a real
+        # (headed) Chromium under xvfb with the automation tells removed.
+        headed = os.getenv("SCRAPER_HEADED") == "1"
+        browser = await p.chromium.launch(
+            headless=not headed,
+            args=["--disable-blink-features=AutomationControlled"],
         )
-        ctx = await browser.new_context(user_agent=ua)
+        ctx_kwargs = {"locale": "en-GB", "timezone_id": "Europe/London",
+                      "viewport": {"width": 1366, "height": 768}}
+        if not headed:
+            # headless UA says "HeadlessChrome"; headed Chromium already reports a normal UA
+            ctx_kwargs["user_agent"] = (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            )
+        ctx = await browser.new_context(**ctx_kwargs)
+        await ctx.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
+        )
 
         # --- Step 1: collect all match links (single page, sequential) ---
         listing_page = await ctx.new_page()
