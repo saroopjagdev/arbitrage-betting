@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "queued_at": "2026-09-30T23:15:03.422399+00:00",
+    "profit": 0.18810408921933086,
+    "embed": {
+      "title": "\u26be Arbitrage: Houston Astros vs Chicago White Sox",
+      "description": "**18.32% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Houston Astros",
+          "value": "**0.1264 Units** @ 9.4\nBookie: [Smarkets](https://smarkets.com/event/45346310/sport/baseball/mlb/2026/09/30/21-00/chicago-white-sox-at-houston-astros)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Chicago White Sox",
+          "value": "**0.8736 Units** @ 1.36\nBookie: [Bet Victor](https://www.betvictor.com/en-gb/sports/226/meetings/511759910/events/2842715534)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-09-30T23:21:09.096374+00:00",
+    "profit": 0.03423423423423433,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.32% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6306 Units** @ 1.64\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3694 Units** @ 2.8\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
