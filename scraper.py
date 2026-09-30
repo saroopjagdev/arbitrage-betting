@@ -111,13 +111,10 @@ ODDS_ROWS = "main table tbody tr"
 TEAMS_FROM_H1 = re.compile(r"^(.+?) vs (.+?) - Odds")
 
 
-async def _wait_for_page(page, timeout=8000):
+async def _wait_for_page(page, selector=f'{ODDS_ROWS}, a[href*="/h2h/"]', timeout=8000):
     """Wait for OddsPortal content to load — faster than a fixed sleep."""
     try:
-        await page.wait_for_selector(
-            f'{ODDS_ROWS}, a[href*="/h2h/"]',
-            timeout=timeout,
-        )
+        await page.wait_for_selector(selector, timeout=timeout)
     except PlaywrightTimeout:
         pass
 
@@ -215,7 +212,8 @@ async def scrape_match(page, match_url: str, fail_counts: Counter) -> dict | Non
     )
     try:
         await page.goto(full_url, timeout=20000)
-        await _wait_for_page(page)
+        # match pages: wait for the odds table itself (h2h links are there straight away)
+        await _wait_for_page(page, selector=ODDS_ROWS, timeout=12000)
     except Exception as e:
         await _fail(page, full_url, f"goto-error:{type(e).__name__}", fail_counts)
         return None
