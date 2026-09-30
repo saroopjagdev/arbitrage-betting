@@ -1,5 +1,6 @@
 import requests
 import os
+import sys
 from datetime import datetime, timezone
 from arb_calculation import *
 from discord_alerts import send_alert
@@ -254,11 +255,14 @@ def find_two_way_arbs(data, sport_key="tennis"):
 
 
 def run_arbitrage_tracker(sports_list):
+    """Returns the total number of matches fetched across all sports."""
+    total_matches = 0
     for sport in sports_list:
         print(f"\nChecking arbitrage for {sport}...\n")
         data = get_odds_data(sport)
         if not data:
             continue
+        total_matches += len(data)
 
         sport_type = SPORT_TYPES.get(sport, "2way")
 
@@ -267,10 +271,18 @@ def run_arbitrage_tracker(sports_list):
         else:
             find_two_way_arbs(data, sport)
 
+    return total_matches
+
 
 if __name__ == "__main__":
-    run_arbitrage_tracker(ACTIVE_SPORTS)
+    total = run_arbitrage_tracker(ACTIVE_SPORTS)
+    print(f"\nTotal matches scraped this run: {total}")
 
     # Post daily digest once per day (only on the midnight run)
     if datetime.now(timezone.utc).hour == 0:
         post_daily_digest(_arb_log)
+
+    # A run that scrapes nothing is a broken scraper, not "no arbs" — make it red in Actions.
+    if total == 0:
+        print("ERROR: scraped 0 matches across all sports — scraper is likely broken or blocked.")
+        sys.exit(1)

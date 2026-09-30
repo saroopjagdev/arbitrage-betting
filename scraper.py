@@ -7,6 +7,7 @@ works unchanged.
 
 import asyncio
 import re
+from collections import Counter
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeout
 
 PARALLEL_PAGES = 8   # concurrent match pages per sport
@@ -182,7 +183,23 @@ async def get_match_links(page, listing_url: str, tennis_filter: str = "") -> li
     return list(match_links)
 
 
-async def scrape_match(page, match_url: str) -> dict | None:
+MAX_FAIL_LOGS = 3  # per sport: detailed diagnostics for the first few failures
+
+
+async def _fail(page, url: str, reason: str, fail_counts: Counter) -> None:
+    """Record why a match page was skipped and log details for the first few."""
+    fail_counts[reason] += 1
+    if sum(fail_counts.values()) > MAX_FAIL_LOGS:
+        return
+    try:
+        title = await page.title()
+        body = " ".join((await page.inner_text("body")).split())[:200]
+    except Exception:
+        title, body = "?", "?"
+    print(f"    [skip:{reason}] {url}\n      title={title!r} body={body!r}")
+
+
+async def scrape_match(page, match_url: str, fail_counts: Counter) -> dict | None:
     """Scrape a single match page. Returns Odds API-compatible dict or None."""
     full_url = (
         match_url if match_url.startswith("http")
@@ -191,12 +208,14 @@ async def scrape_match(page, match_url: str) -> dict | None:
     try:
         await page.goto(full_url, timeout=20000)
         await _wait_for_page(page)
-    except Exception:
+    except Exception as e:
+        await _fail(page, full_url, f"goto-error:{type(e).__name__}", fail_counts)
         return None
 
     host_el = await page.query_selector('[data-testid="game-host"]')
     guest_el = await page.query_selector('[data-testid="game-guest"]')
     if not host_el or not guest_el:
+        await _fail(page, full_url, "no-teams-selector", fail_counts)
         return None
 
     home_team = (await host_el.inner_text()).strip()
@@ -207,6 +226,7 @@ async def scrape_match(page, match_url: str) -> dict | None:
 
     rows = await page.query_selector_all('[data-testid="over-under-expanded-row"]')
     if not rows:
+        await _fail(page, full_url, "no-odds-rows", fail_counts)
         return None
 
     bookmakers = []
@@ -225,7 +245,9 @@ async def scrape_match(page, match_url: str) -> dict | None:
         })
 
     if len(bookmakers) < MIN_BOOKMAKERS:
-        return None  # too few bookmakers — arb very unlikely, skip
+        # too few bookmakers — arb very unlikely, skip
+        await _fail(page, full_url, f"too-few-bookmakers({len(bookmakers)}/{len(rows)} rows)", fail_counts)
+        return None
 
     return {"home_team": home_team, "away_team": away_team,
             "commence_time": commence_time, "bookmakers": bookmakers}
@@ -251,11 +273,19 @@ async def scrape_sport(sport_key: str) -> list[dict]:
         listing_page = await ctx.new_page()
         print(f"  Listing: {listing_url}")
         match_links = await get_match_links(listing_page, listing_url, tennis_filter)
+        if not match_links:
+            try:
+                title = await listing_page.title()
+                body = " ".join((await listing_page.inner_text("body")).split())[:200]
+            except Exception:
+                title, body = "?", "?"
+            print(f"  [no-links] url={listing_page.url} title={title!r} body={body!r}")
         await listing_page.close()
         print(f"  Found {len(match_links)} match links — scraping in parallel ({PARALLEL_PAGES} at a time)")
 
         # --- Step 2: scrape match pages in parallel batches ---
         results = []
+        fail_counts: Counter = Counter()
         seen = set()
         unique_links = [l for l in match_links if l not in seen and not seen.add(l)][:MAX_MATCHES]
 
@@ -263,7 +293,7 @@ async def scrape_sport(sport_key: str) -> list[dict]:
             page = await ctx.new_page()
             chunk_results = []
             for link in links_chunk:
-                data = await scrape_match(page, link)
+                data = await scrape_match(page, link, fail_counts)
                 if data:
                     chunk_results.append(data)
                     print(f"    + {data['home_team']} vs {data['away_team']} ({len(data['bookmakers'])} bookmakers)")
@@ -275,6 +305,9 @@ async def scrape_sport(sport_key: str) -> list[dict]:
         chunk_results = await asyncio.gather(*[worker(chunk) for chunk in chunks])
         for r in chunk_results:
             results.extend(r)
+
+        print(f"  Scraped {len(results)}/{len(unique_links)} matches"
+              + (f"; skipped: {dict(fail_counts)}" if fail_counts else ""))
 
         await browser.close()
 
