@@ -25,23 +25,21 @@ MIN_STAKE_PROP = 0.005
 
 # Sports to track. Add any key from SPORT_TYPES or SCRAPER_SPORT_URLS.
 ACTIVE_SPORTS = [
-    # Tennis — Wimbledon period, then US Open swing (Jun-Sep)
-    "tennis_atp",
-    "tennis_wta",
-    # Soccer — World Cup runs until mid-July; MLS runs all summer
-    "soccer_world_cup",
-    "soccer_usa_mls",
-    # Baseball — MLB full season (Apr-Oct)
-    "baseball_mlb",
-    # Cricket — T20 Blast running now in England (May-Jul)
-    "cricket_t20_blast",
-    # Combat sports — UFC/boxing events every few weeks, year-round
+    # Autumn calendar (Oct-Dec). Each sport costs Odds API credits whenever the
+    # scraper falls back, so keep this list to what is actually in season.
+    "americanfootball_nfl",
+    "americanfootball_ncaaf",
+    "baseball_mlb",          # postseason through Oct
+    "basketball_nba",        # season starts mid-Oct
+    "icehockey_nhl",         # season starts early Oct
+    "soccer_epl",
+    "soccer_uefa_champs_league",
+    "soccer_spain_la_liga",
+    "soccer_germany_bundesliga",
+    "soccer_italy_serie_a",
+    "soccer_france_ligue_one",
     "mma_mixed_martial_arts",
     "boxing_boxing",
-    # Rugby League — NRL season runs Mar-Sep
-    "rugbyleague_nrl",
-    # Basketball — WNBA season runs May-Sep
-    "basketball_wnba",
 ]
 
 # Full dictionary for future flexibility
@@ -107,9 +105,12 @@ SPORT_TYPES = {
 def get_odds_data(sport):
     if USE_SCRAPER and sport in SCRAPER_SPORT_URLS:
         print(f"  [scraper] fetching {sport}")
-        return get_odds_data_scraped(sport)
+        data = get_odds_data_scraped(sport)
+        if data or not API_KEY:
+            return data
+        print(f"  [scraper] 0 matches for {sport} — falling back to The Odds API")
 
-    # Fallback: The Odds API (requires API_KEY)
+    # The Odds API (requires API_KEY): used when the scraper is off or came back empty
     url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
     params = {
         "apiKey": API_KEY,
@@ -122,6 +123,8 @@ def get_odds_data(sport):
         response = requests.get(url, params=params)
         response.raise_for_status()
         data = response.json()
+        print(f"  [odds-api] {sport}: {len(data)} events "
+              f"(credits remaining: {response.headers.get('x-requests-remaining', '?')})")
         return data
     except Exception as e:
         print(f"Error fetching data for {sport}: {e}")

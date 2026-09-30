@@ -19,21 +19,21 @@ MAX_MATCHES = 25     # max match pages to scrape per listing page
 SPORT_URLS = {
     "tennis_atp":  "https://www.oddsportal.com/tennis/",
     "tennis_wta":  "https://www.oddsportal.com/tennis/",
-    "soccer_epl":  "https://www.oddsportal.com/soccer/england/premier-league/",
-    "soccer_uefa_champs_league": "https://www.oddsportal.com/soccer/europe/champions-league/",
-    "soccer_spain_la_liga":      "https://www.oddsportal.com/soccer/spain/laliga/",
-    "soccer_germany_bundesliga": "https://www.oddsportal.com/soccer/germany/bundesliga/",
-    "soccer_italy_serie_a":      "https://www.oddsportal.com/soccer/italy/serie-a/",
-    "soccer_france_ligue_one":   "https://www.oddsportal.com/soccer/france/ligue-1/",
-    "soccer_world_cup":          "https://www.oddsportal.com/soccer/world/world-cup/",
-    "soccer_uefa_europa_league": "https://www.oddsportal.com/soccer/europe/europa-league/",
-    "soccer_uefa_europa_conference_league": "https://www.oddsportal.com/soccer/europe/conference-league/",
-    "soccer_netherlands_eredivisie":    "https://www.oddsportal.com/soccer/netherlands/eredivisie/",
-    "soccer_portugal_primeira_liga":    "https://www.oddsportal.com/soccer/portugal/primeira-liga/",
-    "soccer_usa_mls":                   "https://www.oddsportal.com/soccer/usa/mls/",
-    "soccer_brazil_campeonato":         "https://www.oddsportal.com/soccer/brazil/serie-a/",
-    "soccer_argentina_primera_division":"https://www.oddsportal.com/soccer/argentina/primera-division/",
-    "soccer_uefa_european_championship":"https://www.oddsportal.com/soccer/europe/european-championship/",
+    "soccer_epl":  "https://www.oddsportal.com/football/england/premier-league/",
+    "soccer_uefa_champs_league": "https://www.oddsportal.com/football/europe/champions-league/",
+    "soccer_spain_la_liga":      "https://www.oddsportal.com/football/spain/laliga/",
+    "soccer_germany_bundesliga": "https://www.oddsportal.com/football/germany/bundesliga/",
+    "soccer_italy_serie_a":      "https://www.oddsportal.com/football/italy/serie-a/",
+    "soccer_france_ligue_one":   "https://www.oddsportal.com/football/france/ligue-1/",
+    "soccer_world_cup":          "https://www.oddsportal.com/football/world/world-cup/",
+    "soccer_uefa_europa_league": "https://www.oddsportal.com/football/europe/europa-league/",
+    "soccer_uefa_europa_conference_league": "https://www.oddsportal.com/football/europe/conference-league/",
+    "soccer_netherlands_eredivisie":    "https://www.oddsportal.com/football/netherlands/eredivisie/",
+    "soccer_portugal_primeira_liga":    "https://www.oddsportal.com/football/portugal/primeira-liga/",
+    "soccer_usa_mls":                   "https://www.oddsportal.com/football/usa/mls/",
+    "soccer_brazil_campeonato":         "https://www.oddsportal.com/football/brazil/serie-a/",
+    "soccer_argentina_primera_division":"https://www.oddsportal.com/football/argentina/primera-division/",
+    "soccer_uefa_european_championship":"https://www.oddsportal.com/football/europe/european-championship/",
     "basketball_nba":       "https://www.oddsportal.com/basketball/usa/nba/",
     "basketball_euroleague":"https://www.oddsportal.com/basketball/europe/euroleague/",
     "basketball_ncaab":     "https://www.oddsportal.com/basketball/usa/ncaa/",
@@ -135,7 +135,8 @@ async def get_match_links(page, listing_url: str, tennis_filter: str = "") -> li
         return []
 
     hrefs = await _get_hrefs(page)
-    skip = ("/results", "/standings", "/outrights", "/draws")
+    skip = ("/results", "/standings", "/outrights", "/draws",
+            "/yesterday", "/tomorrow", "/today", "/next-matches")
 
     # Tennis: root page contains tournament sub-page links — find those first
     if tennis_filter:
