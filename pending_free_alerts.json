@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "queued_at": "2026-10-02T06:13:04.501176+00:00",
+    "profit": 0.03321554770318036,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Daniel Dubois vs Fabio Wardley",
+      "description": "**3.20% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Daniel Dubois",
+          "value": "**0.7597 Units** @ 1.36\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Fabio Wardley",
+          "value": "**0.2403 Units** @ 4.3\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-02T06:13:05.074799+00:00",
+    "profit": 0.03423423423423433,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.32% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6306 Units** @ 1.64\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3694 Units** @ 2.8\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
