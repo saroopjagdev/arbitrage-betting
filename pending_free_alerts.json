@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "queued_at": "2026-10-03T16:18:33.263832+00:00",
+    "profit": 0.09090909090909105,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Mississippi State Bulldogs vs Alabama Crimson Tide",
+      "description": "**8.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Mississippi State Bulldogs",
+          "value": "**0.2424 Units** @ 4.5\nBookie: [Betway](https://betway.com/en/sports/evt/17283431)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Alabama Crimson Tide",
+          "value": "**0.7576 Units** @ 1.44\nBookie: [Coral](https://sports.coral.co.uk/event/american-football/american/ncaa/mississippi-st-v-alabama/46458165/main-markets)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-03T16:18:36.122116+00:00",
+    "profit": 0.041705716963448936,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: North Carolina Tar Heels vs Notre Dame Fighting Irish",
+      "description": "**4.13% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on North Carolina Tar Heels",
+          "value": "**0.1097 Units** @ 9.5\nBookie: [Coral](https://sports.coral.co.uk/event/american-football/american/ncaa/north-carolina-v-notre-dame/46473015/main-markets)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Notre Dame Fighting Irish",
+          "value": "**0.8903 Units** @ 1.17\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-03T16:25:09.238425+00:00",
+    "profit": 0.03321554770318036,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Daniel Dubois vs Fabio Wardley",
+      "description": "**3.20% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Daniel Dubois",
+          "value": "**0.7597 Units** @ 1.36\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Fabio Wardley",
+          "value": "**0.2403 Units** @ 4.3\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-03T16:25:09.868976+00:00",
+    "profit": 0.038202247191011285,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.60% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6292 Units** @ 1.65\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3708 Units** @ 2.8\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
