@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "queued_at": "2026-10-04T23:49:19.395412+00:00",
+    "profit": 0.10374152952565341,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Las Vegas Raiders vs Kansas City Chiefs",
+      "description": "**9.98% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Las Vegas Raiders",
+          "value": "**0.0566 Units** @ 19.49\nBookie: [Smarkets](https://smarkets.com/event/45197278/sport/american-football/nfl/2026/10/04/20-25/kansas-city-chiefs-at-las-vegas-raiders)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Kansas City Chiefs",
+          "value": "**0.9434 Units** @ 1.17\nBookie: [Paddy Power](https://www.paddypower.com/american-football/nfl/kansas-city-chiefs-@-las-vegas-raiders-36104926)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
