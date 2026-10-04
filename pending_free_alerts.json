@@ -1,0 +1,74 @@
+[
+  {
+    "queued_at": "2026-10-04T17:48:23.722968+00:00",
+    "profit": 0.0736842105263158,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Buffalo Bills vs New England Patriots",
+      "description": "**7.10% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Buffalo Bills",
+          "value": "**0.7018 Units** @ 1.53\nBookie: [Matchbook](https://www.matchbook.com/events/american-football/united-states-of-america/nfl/33332785750100023/)",
+          "inline": true
+        },
+        {
+          "name": "Bet on New England Patriots",
+          "value": "**0.2982 Units** @ 3.6\nBookie: [William Hill](https://sports.williamhill.com/betting/en-gb/american-football/OB_EV39780076/new-england-patriots-buffalo-bills)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-04T17:48:25.648312+00:00",
+    "profit": 0.0565819861431871,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Cincinnati Bengals vs Jacksonville Jaguars",
+      "description": "**5.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Cincinnati Bengals",
+          "value": "**0.5774 Units** @ 1.83\nBookie: [Matchbook](https://www.matchbook.com/events/american-football/united-states-of-america/nfl/33828267657100023/)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Jacksonville Jaguars",
+          "value": "**0.4226 Units** @ 2.5\nBookie: [888sport](https://www.888sport.com/american-football/united-states/nfl/jacksonville-jaguars-cincinnati-bengals-e-7627722/)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-04T17:48:26.374050+00:00",
+    "profit": 0.057054945054944906,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Houston Texans vs Dallas Cowboys",
+      "description": "**5.21% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Houston Texans",
+          "value": "**0.6330 Units** @ 1.67\nBookie: [Paddy Power](https://www.paddypower.com/american-football/nfl/dallas-cowboys-@-houston-texans-36104922)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Dallas Cowboys",
+          "value": "**0.3670 Units** @ 2.88\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
