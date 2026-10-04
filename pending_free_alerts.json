@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "queued_at": "2026-10-04T01:47:52.946115+00:00",
+    "profit": 0.0677559912854031,
+    "embed": {
+      "title": "\u26be Arbitrage: Milwaukee Brewers vs San Diego Padres",
+      "description": "**6.47% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Milwaukee Brewers",
+          "value": "**0.6318 Units** @ 1.69\nBookie: [Betway](https://betway.com/en/sports/evt/17295197)",
+          "inline": true
+        },
+        {
+          "name": "Bet on San Diego Padres",
+          "value": "**0.3682 Units** @ 2.9\nBookie: [William Hill](https://sports.williamhill.com/betting/en-gb/baseball/OB_EV41385666/san-diego-padres-milwaukee-brewers)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-04T01:49:19.873821+00:00",
+    "profit": 1.557172557172557,
+    "embed": {
+      "title": "\ud83c\udfd2 3-Way Arbitrage: Edmonton Oilers vs Seattle Kraken",
+      "description": "**146.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Edmonton Oilers",
+          "value": "**0.4262 Units** @ 6.0\nBookie: [Unibet (UK)](https://www.unibet.co.uk/betting/odds/icehockey/united_states/nhl/edmonton-oilers-vs-seattle-kraken/d02ef36861eb6b9c7c01a49c2919e7b2)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Draw",
+          "value": "**0.5114 Units** @ 5.0\nBookie: [Betway](https://betway.com/en/sports/evt/17302288)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Seattle Kraken",
+          "value": "**0.0624 Units** @ 41.0\nBookie: [Paddy Power](https://www.paddypower.com/ice-hockey/nhl/seattle-kraken-@-edmonton-oilers-36143886)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-10-04T01:52:40.152103+00:00",
+    "profit": 0.03423423423423433,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.32% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6306 Units** @ 1.64\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3694 Units** @ 2.8\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
