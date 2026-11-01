@@ -1,1 +1,113 @@
-[]
+[
+  {
+    "queued_at": "2026-11-01T23:21:04.903952+00:00",
+    "profit": 0.20867768595041314,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Miami Dolphins vs New England Patriots",
+      "description": "**20.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Miami Dolphins",
+          "value": "**0.5165 Units** @ 2.34\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on New England Patriots",
+          "value": "**0.4835 Units** @ 2.5\nBookie: [William Hill](https://sports.williamhill.com/betting/en-gb/american-football/OB_EV39780269/new-england-patriots-miami-dolphins)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-01T23:23:23.509857+00:00",
+    "profit": 0.41753101484645083,
+    "embed": {
+      "title": "\ud83c\udfd2 3-Way Arbitrage: New York Rangers vs Edmonton Oilers",
+      "description": "**40.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on New York Rangers",
+          "value": "**0.1418 Units** @ 10.0\nBookie: [Unibet (UK)](https://www.unibet.co.uk/betting/odds/icehockey/united_states/nhl/new-york-rangers-vs-edmonton-oilers/a520900c8389a01df1a29afe3234a0fb)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Draw",
+          "value": "**0.1668 Units** @ 8.5\nBookie: [Unibet (UK)](https://www.unibet.co.uk/betting/odds/icehockey/united_states/nhl/new-york-rangers-vs-edmonton-oilers/a520900c8389a01df1a29afe3234a0fb)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Edmonton Oilers",
+          "value": "**0.6915 Units** @ 2.05\nBookie: [Coral](https://sports.coral.co.uk/event/ice-hockey/ice-hockey-usa/nhl/ny-rangers-v-edm-oilers/47264072/main-markets)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-01T23:28:06.417906+00:00",
+    "profit": 0.05224358974358978,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Chris Billam-Smith vs Cheavon Clarke",
+      "description": "**2.90% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Chris Billam-Smith",
+          "value": "**0.7853 Units** @ 1.34\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Cheavon Clarke",
+          "value": "**0.2147 Units** @ 4.9\nBookie: [LiveScore Bet](https://www.livescorebet.com/uk/sports/boxing/boxing/chris-billam-smith-cheavon-clarke/SBTE_2_1029677176)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 5.22%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-01T23:28:07.114899+00:00",
+    "profit": 0.03561521252796429,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**2.24% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6353 Units** @ 1.63\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3647 Units** @ 2.84\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 3.56%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
