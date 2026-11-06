@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "queued_at": "2026-11-06T20:02:08.690775+00:00",
+    "profit": 0.06779661016949157,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Pryce Taylor vs Tsotne Rogava",
+      "description": "**6.40% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Pryce Taylor",
+          "value": "**0.7627 Units** @ 1.4\nBookie: [Paddy Power](https://www.paddypower.com/boxing/boxing-matches/pryce-taylor-v-tsotne-rogava-36279311)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Tsotne Rogava",
+          "value": "**0.2373 Units** @ 4.5\nBookie: [Betway](https://betway.com/en/sports/evt/17445383)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-06T20:02:09.904493+00:00",
+    "profit": 0.04772234273318876,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Brittany Sims vs Shera Mae Patricio",
+      "description": "**4.65% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Brittany Sims",
+          "value": "**0.6508 Units** @ 1.61\nBookie: [LiveScore Bet](https://www.livescorebet.com/uk/sports/boxing/boxing/brittany-sims-shera-mae-patricio/SBTE_2_1029700090)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Shera Mae Patricio",
+          "value": "**0.3492 Units** @ 3.0\nBookie: [Betway](https://betway.com/en/sports/evt/17445384)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-06T20:02:10.647101+00:00",
+    "profit": 0.04093959731543628,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.95% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6309 Units** @ 1.65\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3691 Units** @ 2.82\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
