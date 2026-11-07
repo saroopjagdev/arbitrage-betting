@@ -1,1 +1,233 @@
-[]
+[
+  {
+    "queued_at": "2026-11-07T20:43:23.135877+00:00",
+    "profit": 0.04899078973153048,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Missouri Tigers vs Texas Longhorns",
+      "description": "**1.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 15844367,
+      "fields": [
+        {
+          "name": "Bet on Missouri Tigers",
+          "value": "**0.0104 Units** @ 101.0\nBookie: [Paddy Power](https://www.paddypower.com/american-football/ncaa-football-games/texas-@-missouri-36244185)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Texas Longhorns",
+          "value": "**0.9896 Units** @ 1.06\nBookie: [William Hill](https://sports.williamhill.com/betting/en-gb/american-football/OB_EV39494697/texas-longhorns-missouri-tigers)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 4.90%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:43:23.761474+00:00",
+    "profit": 0.06422018348623837,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Auburn Tigers vs Arkansas Razorbacks",
+      "description": "**5.85% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Auburn Tigers",
+          "value": "**0.7339 Units** @ 1.45\nBookie: [Unibet (UK)](https://www.unibet.co.uk/betting/odds/americanfootball/ncaa/auburn-tigers-vs-arkansas-razorbacks/4a30b323afc725e91ca79f901ef4d760)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Arkansas Razorbacks",
+          "value": "**0.2661 Units** @ 4.0\nBookie: [William Hill](https://sports.williamhill.com/betting/en-gb/american-football/OB_EV39474911/arkansas-razorbacks-auburn-tigers)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:43:25.230871+00:00",
+    "profit": 0.12468193384223936,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Navy Midshipmen vs Temple Owls",
+      "description": "**10.50% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Navy Midshipmen",
+          "value": "**0.8270 Units** @ 1.36\nBookie: [Matchbook](https://www.matchbook.com/events/american-football/united-states-of-america/ncaa-division-i-fbs/34759519556700023/)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Temple Owls",
+          "value": "**0.1730 Units** @ 6.5\nBookie: [Paddy Power](https://www.paddypower.com/american-football/ncaa-football-games/temple-@-navy-36260494)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:48:39.163906+00:00",
+    "profit": 0.09045720499145626,
+    "embed": {
+      "title": "\u26bd 3-Way Arbitrage: Paris Saint Germain vs Troyes",
+      "description": "**-18.18% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 15158332,
+      "fields": [
+        {
+          "name": "Bet on Paris Saint Germain",
+          "value": "**0.9320 Units** @ 1.17\nBookie: [Sky Bet](https://skybet.com/football/french-ligue-1/paris-st-g-v-estac-troyes/e-36239806)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Draw",
+          "value": "**0.0545 Units** @ 20.0\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Troyes",
+          "value": "**0.0135 Units** @ 81.0\nBookie: [Betfair Sportsbook](https://www.betfair.com/betting/football/french-ligue-1/paris-st-g-v-estac-troyes/e-36239806)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[WARNING] Rounding to 0.01 units eliminates profit!",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:49:10.242101+00:00",
+    "profit": 0.04967441860465116,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Joshua Buatsi vs Willy Hutchinson",
+      "description": "**4.16% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Joshua Buatsi",
+          "value": "**0.4233 Units** @ 2.48\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Willy Hutchinson",
+          "value": "**0.5767 Units** @ 1.82\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:49:10.504982+00:00",
+    "profit": 0.034715261958997656,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Denzel Bentley vs Shane Mosley Jr",
+      "description": "**3.36% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Denzel Bentley",
+          "value": "**0.6196 Units** @ 1.67\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Shane Mosley Jr",
+          "value": "**0.3804 Units** @ 2.72\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:49:11.098017+00:00",
+    "profit": 0.125,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Pryce Taylor vs Tsotne Rogava",
+      "description": "**12.50% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Pryce Taylor",
+          "value": "**0.7500 Units** @ 1.5\nBookie: [Paddy Power](https://www.paddypower.com/boxing/boxing-matches/pryce-taylor-v-tsotne-rogava-36279311)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Tsotne Rogava",
+          "value": "**0.2500 Units** @ 4.5\nBookie: [Betway](https://betway.com/en/sports/evt/17445383)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:49:11.632484+00:00",
+    "profit": 0.06034482758620685,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Brittany Sims vs Shera Mae Patricio",
+      "description": "**5.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Brittany Sims",
+          "value": "**0.6466 Units** @ 1.64\nBookie: [LiveScore Bet](https://www.livescorebet.com/uk/sports/boxing/boxing/brittany-sims-shera-mae-patricio/SBTE_2_1029700090)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Shera Mae Patricio",
+          "value": "**0.3534 Units** @ 3.0\nBookie: [Betway](https://betway.com/en/sports/evt/17445384)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-07T20:49:11.919160+00:00",
+    "profit": 0.03180778032036602,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**2.60% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6178 Units** @ 1.67\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3822 Units** @ 2.7\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
