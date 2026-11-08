@@ -1,1 +1,190 @@
-[]
+[
+  {
+    "queued_at": "2026-11-08T21:39:36.553265+00:00",
+    "profit": 0.47485080988917305,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: New Orleans Saints vs Cleveland Browns",
+      "description": "**47.05% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on New Orleans Saints",
+          "value": "**0.8525 Units** @ 1.73\nBookie: [Paddy Power](https://www.paddypower.com/american-football/nfl/cleveland-browns-@-new-orleans-saints-36244869)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Cleveland Browns",
+          "value": "**0.1475 Units** @ 10.0\nBookie: [Betway](https://betway.com/en/sports/evt/17428440)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T21:39:37.681173+00:00",
+    "profit": 0.49836601307189543,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: New England Patriots vs Green Bay Packers",
+      "description": "**49.34% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on New England Patriots",
+          "value": "**0.4281 Units** @ 3.5\nBookie: [William Hill](https://sports.williamhill.com/betting/en-gb/american-football/OB_EV39780256/green-bay-packers-new-england-patriots)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Green Bay Packers",
+          "value": "**0.5719 Units** @ 2.62\nBookie: [Coral](https://sports.coral.co.uk/event/american-football/american/nfl/ne-patriots-v-gb-packers/47293198/main-markets)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T21:39:38.581059+00:00",
+    "profit": 0.08465608465608465,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: San Francisco 49ers vs Las Vegas Raiders",
+      "description": "**6.60% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on San Francisco 49ers",
+          "value": "**0.8677 Units** @ 1.25\nBookie: [BoyleSports](https://www.boylesports.com/sports/american-football/event/usa-nfl/san-francisco-49ers-v-las-vegas-raiders)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Las Vegas Raiders",
+          "value": "**0.1323 Units** @ 8.2\nBookie: [Matchbook](https://www.matchbook.com/events/american-football/united-states-of-america/nfl/33322158535200023/)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 8.47%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T21:39:39.450824+00:00",
+    "profit": 0.07920133111480876,
+    "embed": {
+      "title": "\ud83c\udfc8 Arbitrage: Seattle Seahawks vs Arizona Cardinals",
+      "description": "**5.80% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Seattle Seahawks",
+          "value": "**0.7654 Units** @ 1.41\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Arizona Cardinals",
+          "value": "**0.2346 Units** @ 4.6\nBookie: [Ladbrokes](https://sports.ladbrokes.com/event/american-football/american/nfl/seattle-seahawks-v-arizona-cardinals/259593726/main-markets)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 7.92%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T21:45:45.820293+00:00",
+    "profit": 0.18566853819443674,
+    "embed": {
+      "title": "\u26bd 3-Way Arbitrage: Fiorentina vs Juventus",
+      "description": "**2.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Fiorentina",
+          "value": "**0.0232 Units** @ 51.0\nBookie: [Betfair Sportsbook](https://www.betfair.com/betting/football/italian-serie-a/fiorentina-v-juventus/e-36267099)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Draw",
+          "value": "**0.9485 Units** @ 1.25\nBookie: [Sky Bet](https://skybet.com/football/italian-serie-a/fiorentina-v-juventus/e-36267099)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Juventus",
+          "value": "**0.0282 Units** @ 42.02\nBookie: [Smarkets](https://smarkets.com/event/45414195/sport/football/italy-serie-a/2026/11/08/19-45/fiorentina-vs-juventus)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 18.57%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T21:47:09.097552+00:00",
+    "profit": 0.04761904761904767,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Irma Garcia vs Nataly Delgado",
+      "description": "**4.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Irma Garcia",
+          "value": "**0.5238 Units** @ 2.0\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Nataly Delgado",
+          "value": "**0.4762 Units** @ 2.2\nBookie: [Coral](https://sports.coral.co.uk/event/boxing/boxing/upcoming-fights/irma-garcia-v-nataly-delgado/47329954/main-markets)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T21:47:10.162302+00:00",
+    "profit": 0.03180778032036602,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**2.60% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6178 Units** @ 1.67\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3822 Units** @ 2.7\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
