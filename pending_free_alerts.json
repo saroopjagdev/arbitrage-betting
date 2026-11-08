@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "queued_at": "2026-11-08T17:59:19.181361+00:00",
+    "profit": 1.4388111888111892,
+    "embed": {
+      "title": "\u26bd 3-Way Arbitrage: Manchester United vs Aston Villa",
+      "description": "**143.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Manchester United",
+          "value": "**0.0787 Units** @ 31.0\nBookie: [Unibet (UK)](https://www.unibet.co.uk/betting/odds/football/england/premier_league/manchester-united-vs-aston-villa/a45c5fad89b63bed91b3970cb5f75a93)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Draw",
+          "value": "**0.2710 Units** @ 9.0\nBookie: [Matchbook](https://www.matchbook.com/events/soccer/england/english-premier-league/34690488110000023/)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Aston Villa",
+          "value": "**0.6503 Units** @ 3.75\nBookie: [Sky Bet](https://skybet.com/football/english-premier-league/man-utd-v-aston-villa/e-36235212)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T18:02:50.735107+00:00",
+    "profit": 0.09075884864343742,
+    "embed": {
+      "title": "\u26bd 3-Way Arbitrage: Le Havre vs Lorient",
+      "description": "**8.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Le Havre",
+          "value": "**0.0062 Units** @ 176.0\nBookie: [Unibet (UK)](https://www.unibet.co.uk/betting/odds/football/france/ligue_1/le-havre-vs-lorient/d847ed52ff58233b60dabf019efc6a14)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Draw",
+          "value": "**0.1212 Units** @ 9.0\nBookie: [Virgin Bet](https://www.virginbet.com/sports/football/france-ligue-1/le-havre-lorient/SBTE_2_1027973962)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Lorient",
+          "value": "**0.8726 Units** @ 1.25\nBookie: [Sky Bet](https://skybet.com/football/french-ligue-1/le-havre-v-lorient/e-36239986)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T18:03:23.955530+00:00",
+    "profit": 0.039328537170263855,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Irma Garcia vs Nataly Delgado",
+      "description": "**3.40% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Irma Garcia",
+          "value": "**0.5276 Units** @ 1.97\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Nataly Delgado",
+          "value": "**0.4724 Units** @ 2.2\nBookie: [Coral](https://sports.coral.co.uk/event/boxing/boxing/upcoming-fights/irma-garcia-v-nataly-delgado/47329954/main-markets)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-08T18:03:25.219114+00:00",
+    "profit": 0.03180778032036602,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**2.60% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6178 Units** @ 1.67\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3822 Units** @ 2.7\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
