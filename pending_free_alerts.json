@@ -1,1 +1,127 @@
-[]
+[
+  {
+    "queued_at": "2026-11-09T01:16:39.477050+00:00",
+    "profit": 0.3572744014732965,
+    "embed": {
+      "title": "\ud83c\udfc0 Arbitrage: Detroit Pistons vs Los Angeles Lakers",
+      "description": "**34.75% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Detroit Pistons",
+          "value": "**0.5064 Units** @ 2.68\nBookie: [Matchbook](https://www.matchbook.com/events/basketball/united-states-of-america/nba/34812797435800072/)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Los Angeles Lakers",
+          "value": "**0.4936 Units** @ 2.75\nBookie: [Sky Bet](https://skybet.com/basketball/nba/los-angeles-lakers-detroit-pistons/e-36286508)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-09T01:16:40.318207+00:00",
+    "profit": 0.05856832971800441,
+    "embed": {
+      "title": "\ud83c\udfc0 Arbitrage: Dallas Mavericks vs Brooklyn Nets",
+      "description": "**4.00% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Dallas Mavericks",
+          "value": "**0.8677 Units** @ 1.22\nBookie: [Coral](https://sports.coral.co.uk/event/basketball/basketball-usa/nba/dal-mavericks-vs-bro-nets/47436990/main-markets)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Brooklyn Nets",
+          "value": "**0.1323 Units** @ 8.0\nBookie: [Matchbook](https://www.matchbook.com/events/basketball/united-states-of-america/nba/34814093228900072/)",
+          "inline": true
+        },
+        {
+          "name": "Risk Analysis",
+          "value": "[CAUTION] Rounding significantly reduces profit (Theoretical: 5.86%)",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-09T01:16:41.274777+00:00",
+    "profit": 0.1351351351351351,
+    "embed": {
+      "title": "\ud83c\udfc0 Arbitrage: Milwaukee Bucks vs Boston Celtics",
+      "description": "**13.40% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Milwaukee Bucks",
+          "value": "**0.1892 Units** @ 6.0\nBookie: [Sky Bet](https://skybet.com/basketball/nba/boston-celtics-milwaukee-bucks/e-36286504)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Boston Celtics",
+          "value": "**0.8108 Units** @ 1.4\nBookie: [Matchbook](https://www.matchbook.com/events/basketball/united-states-of-america/nba/34813575672700072/)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-09T01:21:43.662629+00:00",
+    "profit": 0.03834808259587019,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Elif Nur Turhan vs Alycia Baumgardner",
+      "description": "**3.68% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Elif Nur Turhan",
+          "value": "**0.1888 Units** @ 5.5\nBookie: [Paddy Power](https://www.paddypower.com/boxing/boxing-matches/elif-nur-turhan-v-alycia-baumgardner-35982945)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Alycia Baumgardner",
+          "value": "**0.8112 Units** @ 1.28\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-09T01:21:44.059150+00:00",
+    "profit": 0.03180778032036602,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**2.60% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6178 Units** @ 1.67\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3822 Units** @ 2.7\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
