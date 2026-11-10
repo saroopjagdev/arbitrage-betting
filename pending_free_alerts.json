@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "queued_at": "2026-11-10T01:50:46.131291+00:00",
+    "profit": 0.15533980582524265,
+    "embed": {
+      "title": "\ud83c\udfc0 Arbitrage: Atlanta Hawks vs Los Angeles Lakers",
+      "description": "**15.50% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Atlanta Hawks",
+          "value": "**0.3398 Units** @ 3.4\nBookie: [Sky Bet](https://skybet.com/basketball/nba/los-angeles-lakers-atlanta-hawks/e-36290204)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Los Angeles Lakers",
+          "value": "**0.6602 Units** @ 1.75\nBookie: [BoyleSports](https://www.boylesports.com/sports/basketball/event/usa-nba/atlanta-hawks-v-los-angeles-lakers)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-10T01:50:46.419522+00:00",
+    "profit": 0.034946236559139754,
+    "embed": {
+      "title": "\ud83c\udfc0 Arbitrage: Detroit Pistons vs Washington Wizards",
+      "description": "**3.40% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Detroit Pistons",
+          "value": "**0.9409 Units** @ 1.1\nBookie: [Sky Bet](https://skybet.com/basketball/nba/washington-wizards-detroit-pistons/e-36290198)",
+          "inline": true
+        },
+        {
+          "name": "Bet on Washington Wizards",
+          "value": "**0.0591 Units** @ 17.5\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-10T01:55:03.773914+00:00",
+    "profit": 0.038297872340425476,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Jason Moloney vs Jose Andres Teran",
+      "description": "**3.20% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Jason Moloney",
+          "value": "**0.5674 Units** @ 1.83\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Jose Andres Teran",
+          "value": "**0.4326 Units** @ 2.4\nBookie: [Paddy Power](https://www.paddypower.com/boxing/boxing-matches/jason-moloney-v-andres-teran-36263682)",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  },
+  {
+    "queued_at": "2026-11-10T01:55:04.437072+00:00",
+    "profit": 0.034715261958997656,
+    "embed": {
+      "title": "\ud83e\udd4a Arbitrage: Tyson Fury vs Anthony Joshua",
+      "description": "**3.36% Guaranteed Profit** (after rounding)\n\n\u26a0\ufe0f *This alert was sent to subscribers 30 minutes ago.*\nSubscribe for real-time alerts \u2192 ko-fi.com/arbfactory",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Bet on Tyson Fury",
+          "value": "**0.6196 Units** @ 1.67\nBookie: Betfair",
+          "inline": true
+        },
+        {
+          "name": "Bet on Anthony Joshua",
+          "value": "**0.3804 Units** @ 2.72\nBookie: Betfair",
+          "inline": true
+        }
+      ],
+      "footer": {
+        "text": "Arbitrage Betting Tracker | UK Regions"
+      }
+    }
+  }
+]
